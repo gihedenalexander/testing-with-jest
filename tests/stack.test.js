@@ -24,7 +24,7 @@ test('peek on stack with one element returns that element', () => {
     expect(stack.peek()).toBe(1);
 });
 
-test('pop removes and returns the top element of the stack', () => {
+test('pop removes and returns the top element of the stack, and checks that peek works as intended', () => {
     stack.push(99);
     stack.push(66);
     const popped = stack.pop();
