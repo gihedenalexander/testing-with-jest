@@ -17,3 +17,11 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+test('pop removes and returns the top element of the stack', () => {
+    stack.push(99);
+    stack.push(66);
+    const popped = stack.pop();
+    expect(popped).toBe(99); // Medvetet fel i denna commit
+    expect(stack.peek()).toBe(66); // Också medvetet fel i denna commit
+});

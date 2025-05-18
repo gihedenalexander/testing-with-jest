@@ -34,3 +34,25 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+describe('Pushing two elements and control the stack with peek"', () => {
+    it('should show the last pushed element at the top of the stack', async () => {
+        let push = await driver.findElement(By.id('push'));
+        await push.click();
+        let alert = await driver.switchTo().alert();
+        await alert.sendKeys("Morot");
+        await alert.accept();
+
+        push = await driver.findElement(By.id('push'));
+        await push.click();
+        alert = await driver.switchTo().alert();
+        await alert.sendKeys("Spenat");
+        await alert.accept();
+
+        let peek = await driver.findElement(By.id('peek'));
+        await peek.click();
+
+        let topElement = await driver.findElement(By.id('top_of_stack')).getText();
+        expect(topElement).toBe("Morot"); // Medvetet fel i denna commit
+    });
+});
