@@ -53,6 +53,6 @@ describe('Pushing two elements and control the stack with peek"', () => {
         await peek.click();
 
         let topElement = await driver.findElement(By.id('top_of_stack')).getText();
-        expect(topElement).toBe("Morot"); // Medvetet fel i denna commit
+        expect(topElement).toBe("Spenat");
     });
 });

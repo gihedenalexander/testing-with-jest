@@ -22,6 +22,6 @@ test('pop removes and returns the top element of the stack', () => {
     stack.push(99);
     stack.push(66);
     const popped = stack.pop();
-    expect(popped).toBe(99); // Medvetet fel i denna commit
-    expect(stack.peek()).toBe(66); // Också medvetet fel i denna commit
+    expect(popped).toBe(66);
+    expect(stack.peek()).toBe(99);
 });
